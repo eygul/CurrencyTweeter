@@ -13,10 +13,8 @@ from datetime import date
 
 
 def retrieve_rate():
-    HEADERS = {'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) '
-                             'Mobile/15E148'}
     apiUrl = "http://hasanadiguzel.com.tr/api/kurgetir"
-    request_site = Request(apiUrl, headers= HEADERS)
+    request_site = Request(apiUrl)
     webpage = urlopen(request_site).read().decode('utf-8')
     getData = json.loads(webpage)
     rawdata = getData["TCMB_AnlikKurBilgileri"]
